@@ -1,0 +1,30 @@
+ALGORITHM analyzeSentence
+VAR
+    sentence : STRING
+    length, wordCount, vowelCount : INTEGER := 0
+    index : INTEGER
+BEGIN
+    write("Enter a sentence:")
+    read(sentence)
+    
+    length := length(sentence) - 1  
+    
+    index := 1  
+    
+    WHILE (index <= length) DO
+        IF (sentence(index) = " ") THEN
+            wordCount := wordCount + 1  
+        END_IF
+        
+        IF (sentence(index) IN ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]) THEN
+            vowelCount := vowelCount + 1 
+        END_IF
+        
+        index := index + 1  
+    END_WHILE
+
+    write("Number of words:", wordCount + 1) 
+    write("Number of characters:", length)
+    write("Number of vowels:", vowelCount)
+
+END
